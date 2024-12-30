@@ -1,0 +1,37 @@
+
+<div class="machines">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Charts">
+      <div class="machines__charts">
+        <div
+          class="machine-pie-chart"
+          *ngFor="let item of chartsData | keyvalue"
+        >
+          <mat-card appearance="outlined">
+            <mat-card-header>
+              <mat-card-title>
+                <a [routerLink]="['/machine-statuses', item.key]">{{
+                  item.key
+                }}</a></mat-card-title
+              >
+              <mat-card-subtitle
+                >Efficiancy Avarage: {{ this.efficiancyAvg[item.key] }}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <app-pie
+                [pieChartData]="item.value"
+                [pieChartOptions]="pieChartOptions"
+              ></app-pie>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Table">
+      <app-machines-table
+        [departmentsData]="departmentsData"
+      ></app-machines-table>
+    </mat-tab>
+  </mat-tab-group>
+</div>

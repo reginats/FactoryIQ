@@ -1,0 +1,22 @@
+.sidebar{
+    width:400px;
+    height:calc(100vh - 64px);
+    position:fixed;
+    // position: relative;
+    z-index: 0;
+    bottom:0px;
+    left:-400px;
+    // border: 1px solid #000;
+    background: #5ecbec;
+    transition: 0.2s all ease;
+    overflow: hidden;
+    -webkit-box-shadow: 10px 10px 5px -4px rgba(204,194,204,1);
+    -moz-box-shadow: 10px 10px 5px -4px rgba(204,194,204,1);
+    box-shadow: 10px 10px 5px -4px rgba(204,194,204,1);
+    
+    &--open {
+        left: 0px;
+        z-index: 10;
+      }  
+
+}
